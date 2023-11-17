@@ -1,5 +1,7 @@
 var express = require('express');
+const multer = require('multer');
 var router = express.Router();
+const upload = multer({dest:'uploads'})
 
 const record = [];
 
@@ -22,8 +24,8 @@ router.post('/recipe/', function(req, res) {
   res.json(req.body)
 })
 
-router.post('/images', function(req, res) {
-  console.log(req.body.images)
+router.post('/images', upload.array("file",5), function(req, res) {
+  console.log(req.body)
   res.json({"msg":"hi"})
 })
 

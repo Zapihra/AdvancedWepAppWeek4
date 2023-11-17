@@ -45,10 +45,7 @@ submitButton.addEventListener("click" , () => {
             "name": name,
             "instructions": instructionList,
             "ingredients": ingredientList
-        }),
-        headers: {
-            'Content-Type':'application/json'
-        }
+        })
     }).then(function (res) {return res.json();
     }).then(function (data) {
 
@@ -73,11 +70,7 @@ submitButton.addEventListener("click" , () => {
 
     fetch("http://localhost:3000/images", {
         method: 'POST',
-        body: JSON.stringify(dataToSend),
-        headers: {
-            "Content-Type": "application/json",
-        },
-        
+        body: formData
 
     }).then(function (res) {return res.json()
     }).then(function (data) {
