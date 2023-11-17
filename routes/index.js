@@ -23,7 +23,7 @@ router.post('/recipe/', function(req, res) {
 })
 
 router.post('/images', function(req, res) {
-  console.log(req.body)
+  console.log(req.body.images)
   res.json({"msg":"hi"})
 })
 

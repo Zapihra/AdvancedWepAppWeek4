@@ -69,12 +69,15 @@ submitButton.addEventListener("click" , () => {
     fotos = fotos.split("h\\")
     formData.append("images", fotos[1])
 
+    let dataToSend = Object.fromEntries(formData)
+
     fetch("http://localhost:3000/images", {
         method: 'POST',
-        body: formData,
+        body: JSON.stringify(dataToSend),
         headers: {
-            'Content-Type':'multipart/form-data'
-        }
+            "Content-Type": "application/json",
+        },
+        
 
     }).then(function (res) {return res.json()
     }).then(function (data) {
