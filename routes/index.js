@@ -7,6 +7,7 @@ router.get('/', function(req, res, next) {
 });
 
 router.get('/recipe/:food', function(req,res) {
+  
   const food = req.params.food;
   resText = {"name": food, 
   "instructions": ["list"], 

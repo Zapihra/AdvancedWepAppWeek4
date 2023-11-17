@@ -1,13 +1,21 @@
 <html>
 
 <head>
-  <title>Express</title>
+  <title>Week4</title>
   <link rel="stylesheet" href="/stylesheets/style.css">
 </head>
 
-<body>
-  <h1>Express</h1>
-  <p>Welcome to Express</p>
+<body id="body">
+  
 </body>
+  <script>
+  const body = document.getElementById("body");
 
+  fetch("http://localhost:3000/recipe/pizza").then(function (res) {return res.json();
+    }).then(function (data) {
+      const p = document.createElement("p")
+      p.textContent = data
+      body.appendChild(p)
+     })
+  </script>
 </html>
