@@ -19,6 +19,7 @@ fetch("http://localhost:3000/recipe/Pizza")
 const ingButton = document.getElementById("add-ingredient")
 const instButton = document.getElementById("add-instruction")
 const submitButton = document.getElementById("submit")
+const formData = new FormData()
 let ingredientList = []
 let instructionList = []
 
@@ -36,6 +37,7 @@ instButton.addEventListener("click", () => {
 
 submitButton.addEventListener("click" , () => {
     const name = document.getElementById("name-text").value;
+    const fotos = document.getElementById("image-input").value
 
     fetch("http://localhost:3000/recipe/", {
         method: 'POST',
@@ -50,8 +52,6 @@ submitButton.addEventListener("click" , () => {
     }).then(function (res) {return res.json();
     }).then(function (data) {
 
-        console.log(data)
-
         const body = document.getElementById("body");
         const p1 = document.createElement("p")
         const p2 = document.createElement("p")
@@ -64,6 +64,22 @@ submitButton.addEventListener("click" , () => {
         body.appendChild(p2)
         body.appendChild(p3)
     })
+
+    formData.append("images", fotos)
+    console.log(formData)
+
+    fetch("http://localhost:3000/images", {
+        method: 'POST',
+        body: formData,
+        headers: {
+            'Content-Type':'multipart/form-data'
+        }
+
+    }).then(function (res) {return res.json()
+    }).then(function (data) {
+        console.log(data)
+    })
+
     ingredientList = []
     instructionList = []
 

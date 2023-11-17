@@ -22,4 +22,9 @@ router.post('/recipe/', function(req, res) {
   res.json(req.body)
 })
 
+router.post('/images', function(req, res) {
+  console.log(req.body)
+  res.json({"msg":"hi"})
+})
+
 module.exports = router;
