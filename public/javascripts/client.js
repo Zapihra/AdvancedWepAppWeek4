@@ -19,7 +19,7 @@ fetch("http://localhost:3000/recipe/Pizza")
 const ingButton = document.getElementById("add-ingredient")
 const instButton = document.getElementById("add-instruction")
 const submitButton = document.getElementById("submit")
-const formData = new FormData()
+
 let ingredientList = []
 let instructionList = []
 
@@ -62,9 +62,13 @@ submitButton.addEventListener("click" , () => {
         body.appendChild(p3)
     })
 
-
+    
     fotos = fotos.split("h\\")
+    const formData = new FormData()
     formData.append("images", fotos[1])
+
+
+    
 
     let dataToSend = Object.fromEntries(formData)
 
@@ -74,7 +78,7 @@ submitButton.addEventListener("click" , () => {
 
     }).then(function (res) {return res.json()
     }).then(function (data) {
-        console.log(data)
+        //console.log(data)
     })
 
     ingredientList = []

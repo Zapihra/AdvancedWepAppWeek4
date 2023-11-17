@@ -2,6 +2,7 @@ var express = require('express');
 const multer = require('multer');
 var router = express.Router();
 const upload = multer({dest:'uploads'})
+router.use(express.urlencoded({extended: true}))
 
 const record = [];
 
