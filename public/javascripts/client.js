@@ -66,8 +66,9 @@ submitButton.addEventListener("click" , () => {
     })
 
 
-    fotos = fotos.slice(12)
-    formData.append("images", fotos)
+    fotos = fotos.split("h\\")
+    console.log(fotos)
+    formData.append("images", fotos[1])
 
     fetch("http://localhost:3000/images", {
         method: 'POST',
