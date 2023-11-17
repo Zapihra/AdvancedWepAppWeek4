@@ -37,7 +37,7 @@ instButton.addEventListener("click", () => {
 
 submitButton.addEventListener("click" , () => {
     const name = document.getElementById("name-text").value;
-    const fotos = document.getElementById("image-input").value
+    let fotos = document.getElementById("image-input").value;
 
     fetch("http://localhost:3000/recipe/", {
         method: 'POST',
@@ -65,8 +65,9 @@ submitButton.addEventListener("click" , () => {
         body.appendChild(p3)
     })
 
+
+    fotos = fotos.slice(12)
     formData.append("images", fotos)
-    console.log(formData)
 
     fetch("http://localhost:3000/images", {
         method: 'POST',
