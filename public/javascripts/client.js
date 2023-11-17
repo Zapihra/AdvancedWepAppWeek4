@@ -2,7 +2,7 @@ fetch("http://localhost:3000/recipe/Pizza")
 .then(function (res) {return res.json();
 }).then(function (data) {
 
-    const body = document.getElementById("body");
+    const body = document.getElementsByClassName("col")[1];
     const p1 = document.createElement("p")
     const p2 = document.createElement("p")
     const p3 = document.createElement("p")
@@ -52,7 +52,7 @@ submitButton.addEventListener("click" , () => {
     }).then(function (res) {return res.json();
     }).then(function (data) {
 
-        const body = document.getElementById("body");
+        const body = document.getElementsByClassName("col")[1];
         const p1 = document.createElement("p")
         const p2 = document.createElement("p")
         const p3 = document.createElement("p")
@@ -67,9 +67,7 @@ submitButton.addEventListener("click" , () => {
 
 
     fotos = fotos.split("h\\")
-    fotos = fotos[1].split("-")
-    console.log(fotos)
-    formData.append("images", fotos[0])
+    formData.append("images", fotos[1])
 
     fetch("http://localhost:3000/images", {
         method: 'POST',

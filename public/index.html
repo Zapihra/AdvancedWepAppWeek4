@@ -2,25 +2,40 @@
 
 <head>
   <title>Week4</title>
-  <link rel="stylesheet" href="/stylesheets/style.css">
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
   <script src="./javascripts/client.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 </head>
 
 <body id="body">
 
-  <div>
-    <input type="text" id="name-text">
-    <h4>Ingredients</h4>
-    <textarea id="ingredients-text"></textarea>
-    <button id="add-ingredient" type="button">Add ingredient</button>
-    <h4>instructions</h4>
-    <textarea id="instructions-text"></textarea>
-    <button id="add-instruction" type="button">Add instruction</button>
+  <nav>
+    <div class="nav-wrapper">
+      <a href="#" class="brand-logo">Recipes</a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+      
+      </ul>
+    </div>
+  </nav>
 
-    <input type="file" id="image-input" accept=".png, .jpg" multiple>
-    <button id="submit" type="submit">Submit</button>
+  <div class="container">
+    <div class="col">
+      <input type="text" id="name-text">
+      <h4>Ingredients</h4>
+      <textarea id="ingredients-text"></textarea>
+      <button id="add-ingredient" type="button" class="btn">Add ingredient</button>
+      <h4>instructions</h4>
+      <textarea id="instructions-text"></textarea>
+      <button id="add-instruction" type="button" class="btn">Add instruction</button>
+
+      <input type="file" id="image-input" accept=".png, .jpg" multiple>
+      <button id="submit" type="submit" class="btn">Submit</button>
+    </div>
+    <div class="col">
+
+    </div>
   </div>
   
-
 </body>
 </html>
