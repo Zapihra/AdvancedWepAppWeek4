@@ -22,6 +22,7 @@ router.get('/recipe/:food', function(req,res) {
 
 router.post('/recipe/', function(req, res) {
   record.push(req.body)
+  console.log(req.body)
   res.json(req.body)
 })
 
